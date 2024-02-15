@@ -31,7 +31,6 @@ require (
 	github.com/tdewolff/test v0.0.0-20171106182207-265427085153 // indirect
 	github.com/urfave/cli/v2 v2.2.0
 	github.com/uudashr/gopkgs v2.0.1+incompatible // indirect
-	github.com/uudashr/gopkgs/v2 v2.1.2
 	github.com/vigneshuvi/GoDateFormat v0.0.0-20190923034126-379ee8a8c45f
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
 	golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37 // indirect
