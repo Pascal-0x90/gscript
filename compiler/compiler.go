@@ -499,6 +499,7 @@ func (c *Compiler) BuildNativeBinary() error {
 	os.Chdir(c.BuildDir)
 	var cmd *exec.Cmd
 	c.Logger.Infof("Running compilation command")
+	// TODO: Add some sort of optioning here to make it so people don't need to use garble. Maybe in build args???
 	if c.WindowsGui {
 		cmd = exec.Command("garble", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
 	} else {
