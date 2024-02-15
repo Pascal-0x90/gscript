@@ -14,4 +14,4 @@ __https://github.com/ahhh/gscripts/blob/master/attack/windows/enable_smbv1.gs__
 ### Using process injection:
 
 A full example for this is currently unavailable, but the functions are available at this link:
-__https://github.com/gen0cide/gscript/blob/alex-dev/x/windows/windows.go#L222__
+__https://github.com/Pascal-0x90/gscript/blob/alex-dev/x/windows/windows.go#L222__

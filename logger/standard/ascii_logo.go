@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/Pascal-0x90/gscript"
 	"github.com/fatih/color"
-	"github.com/gen0cide/gscript"
 )
 
 // PrintLogo prints the genesis logo to the current standard out
@@ -40,7 +40,7 @@ func ASCIILogo() string {
 		fmt.Sprintf("       %s   %s       %s", color.HiGreenString(".dWi   `88E"), infoLevel.Sprint("S C R I P T I N G"), debugLevel.Sprint("gen0cide")),
 		fmt.Sprintf("       %s    %s            %s", color.HiGreenString("4888~  J8%%"), infoLevel.Sprint("E N G I N E"), debugLevel.Sprint("ahhh")),
 		fmt.Sprintf("        %s                             %s", color.HiGreenString("^\"===*\"`"), debugLevel.Sprint("vyrus")),
-		"                github.com/gen0cide/gscript",
+		"                github.com/Pascal-0x90/gscript",
 		errorLevel.Sprint("***********************************************************"),
 	}
 

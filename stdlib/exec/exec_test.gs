@@ -6,7 +6,7 @@
 
 //priority:150
 //timeout:150
-//go_import:github.com/gen0cide/gscript/stdlib/exec as exec
+//go_import:github.com/Pascal-0x90/gscript/stdlib/exec as exec
 
 function Deploy() {  
     console.log("Starting Exec Command");

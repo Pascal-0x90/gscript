@@ -13,11 +13,11 @@ import (
 	"sync"
 	"text/template"
 
+	"github.com/Pascal-0x90/gscript/compiler/computil"
+	"github.com/Pascal-0x90/gscript/compiler/obfuscator"
+	"github.com/Pascal-0x90/gscript/logger"
+	"github.com/Pascal-0x90/gscript/logger/null"
 	"github.com/fatih/color"
-	"github.com/gen0cide/gscript/compiler/computil"
-	"github.com/gen0cide/gscript/compiler/obfuscator"
-	"github.com/gen0cide/gscript/logger"
-	"github.com/gen0cide/gscript/logger/null"
 	gparser "github.com/robertkrimen/otto/parser"
 	"golang.org/x/tools/imports"
 )

@@ -7,8 +7,8 @@ import (
 	"os/user"
 	"path/filepath"
 
+	"github.com/Pascal-0x90/gscript/logger/standard"
 	"github.com/fatih/color"
-	"github.com/gen0cide/gscript/logger/standard"
 	"github.com/gohxs/readline"
 	isatty "github.com/mattn/go-isatty"
 	"github.com/robertkrimen/otto"

@@ -11,7 +11,7 @@ function get_gscript_version() {
 	local init_cwd
 	local gscript_version
 	init_cwd=$(pwd)
-	cd "$GOPATH/src/github.com/gen0cide/gscript"
+	cd "$GOPATH/src/github.com/Pascal-0x90/gscript"
 	gscript_version="$(parse_git_branch)"
 	cd "$init_cwd"
 	echo "$gscript_version"

@@ -3,9 +3,9 @@ package debugger
 import (
 	"fmt"
 
-	"github.com/gen0cide/gscript/engine"
-	"github.com/gen0cide/gscript/logger"
-	"github.com/gen0cide/gscript/logger/standard"
+	"github.com/Pascal-0x90/gscript/engine"
+	"github.com/Pascal-0x90/gscript/logger"
+	"github.com/Pascal-0x90/gscript/logger/standard"
 )
 
 // Debugger is a wrapper type for handling interactive debug consoles in the genesis engine

@@ -1,4 +1,4 @@
-//go_import:github.com/gen0cide/gscript/tools/linker_test/typelib as typelib
+//go_import:github.com/Pascal-0x90/gscript/tools/linker_test/typelib as typelib
 
 function Deploy() {
   val = 12345

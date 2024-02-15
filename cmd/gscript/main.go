@@ -6,10 +6,10 @@ import (
 
 	"github.com/sirupsen/logrus"
 
+	"github.com/Pascal-0x90/gscript"
+	"github.com/Pascal-0x90/gscript/compiler/computil"
+	"github.com/Pascal-0x90/gscript/logger/standard"
 	"github.com/fatih/color"
-	"github.com/gen0cide/gscript"
-	"github.com/gen0cide/gscript/compiler/computil"
-	"github.com/gen0cide/gscript/logger/standard"
 	"github.com/urfave/cli/v2"
 )
 

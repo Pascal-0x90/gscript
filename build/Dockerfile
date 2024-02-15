@@ -27,8 +27,8 @@ RUN cd /opt && \
     ln -s /opt/go/bin/go /usr/bin/ && \
     mkdir $GOPATH
 
-RUN go get -d github.com/gen0cide/gscript/... && \
-    cd $GOPATH/src/github.com/gen0cide/gscript && \
+RUN go get -d github.com/Pascal-0x90/gscript/... && \
+    cd $GOPATH/src/github.com/Pascal-0x90/gscript && \
     git checkout $GSCRIPT_REVISION && \
     export GO111MODULE=on && \
     go get ./... && \

@@ -1,4 +1,4 @@
-//go_import:github.com/gen0cide/gscript/x/svc as svc
+//go_import:github.com/Pascal-0x90/gscript/x/svc as svc
 //import:/tmp/svctest-win.exe
 
 var service_bin_path = "C:\\WINDOWS\\system32\\megadeath.exe"

@@ -12,7 +12,7 @@
 function Deploy() {
 
     console.log("Starting Write file from String");
-    var writeStringErrors = G.file.WriteFileFromString("/go/src/github.com/gen0cide/gscript/stdlib/file/file_test4.txt", "Testing some stuff\n");
+    var writeStringErrors = G.file.WriteFileFromString("/go/src/github.com/Pascal-0x90/gscript/stdlib/file/file_test4.txt", "Testing some stuff\n");
     console.log("errors: "+ writeStringErrors)
 
 };

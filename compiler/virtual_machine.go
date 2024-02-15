@@ -13,9 +13,9 @@ import (
 	"sync"
 	"text/template"
 
+	"github.com/Pascal-0x90/gscript/compiler/computil"
+	"github.com/Pascal-0x90/gscript/logger"
 	"github.com/fatih/color"
-	"github.com/gen0cide/gscript/compiler/computil"
-	"github.com/gen0cide/gscript/logger"
 	gast "github.com/robertkrimen/otto/ast"
 	gfile "github.com/robertkrimen/otto/file"
 	"github.com/tdewolff/minify"

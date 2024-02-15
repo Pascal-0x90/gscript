@@ -7,13 +7,13 @@ Welcome to the GSCRIPT install!
 If you have docker installed, you can run:
 
 ```sh
-docker pull gen0cide/gscript:v1
+docker pull Pascal-0x90/gscript:v1
 ```
 
 Make a local directory where you can share files between your local machine and the docker container. Replace `$LOCAL_DIR` in the following command with the path to that:
 
 ```sh
-docker run -it -v $LOCAL_DIR:/root/share gen0cide/gscript:v1
+docker run -it -v $LOCAL_DIR:/root/share Pascal-0x90/gscript:v1
 ```
 
 ## Manually
@@ -21,7 +21,7 @@ docker run -it -v $LOCAL_DIR:/root/share gen0cide/gscript:v1
 ### Download GSCRIPT
 
 First pull down the gscript command line utility or source.
-https://github.com/gen0cide/gscript (or your fork if you want to change things)
+https://github.com/Pascal-0x90/gscript (or your fork if you want to change things)
 Make sure you save this project in your `GOPATH`, i.e:
 
 ```sh
@@ -32,20 +32,20 @@ $ echo $GOPATH
 Then the save would go here:
 
 ```sh
-~/go/src/github/gen0cide/gscript/
+~/go/src/github/Pascal-0x90/gscript/
 ```
 
 Like so:
 
 ```sh
-mkdir -p ~/go/src/github/gen0cide/gscript/ && \
-	git clone https://github.com/gen0cide/gscript.git ~/go/src/github/gen0cide/gscript
+mkdir -p ~/go/src/github/Pascal-0x90/gscript/ && \
+	git clone https://github.com/Pascal-0x90/gscript.git ~/go/src/github/Pascal-0x90/gscript
 ```
 
 
 ### Build GSCRIPT
 
-!!NOTE: This doesn't need to happen if you download gscript by doing `go get -a github.com/gen0cide/gscript/cmd/gscript`
+!!NOTE: This doesn't need to happen if you download gscript by doing `go get -a github.com/Pascal-0x90/gscript/cmd/gscript`
 
 First we need to get all of the dependencies:
 
@@ -63,7 +63,7 @@ go get github.com/sirupsen/logrus
 Then build the CLI tool:
 
 ```sh
-cd ~/go/src/github.com/gen0cide/gscript/cmd/gscript
+cd ~/go/src/github.com/Pascal-0x90/gscript/cmd/gscript
 go build
 cp ./gscript /usr/local/bin/
 gscript --help

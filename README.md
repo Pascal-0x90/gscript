@@ -6,7 +6,7 @@
 
 
 
-[![CircleCI](https://circleci.com/gh/gen0cide/gscript/tree/master.svg?style=svg)](https://circleci.com/gh/gen0cide/gscript/tree/master)
+[![CircleCI](https://circleci.com/gh/Pascal-0x90/gscript/tree/master.svg?style=svg)](https://circleci.com/gh/Pascal-0x90/gscript/tree/master)
 
 ## About
 
@@ -40,13 +40,13 @@ https://docs.google.com/presentation/d/1kHdz8DY0Zn44yn_XrZ2RVqDY1lpADThLPNPwHP-n
 If you have docker installed, you can run:
 
 ```
-$ docker pull gen0cide/gscript:v1
+$ docker pull Pascal-0x90/gscript:v1
 ```
 
 Make a local directory where you can share files between your local machine and the docker container. Replace `$LOCAL_DIR` in the following command with the path to that:
 
 ```
-$ docker run -it -v $LOCAL_DIR:/root/share gen0cide/gscript:v1
+$ docker run -it -v $LOCAL_DIR:/root/share Pascal-0x90/gscript:v1
 ```
 
 Thats it! You're good to go.
@@ -60,14 +60,14 @@ Thats it! You're good to go.
 After that, all you need to do is run:
 
 ```
-$ go get github.com/gen0cide/gscript/cmd/gscript
+$ go get github.com/Pascal-0x90/gscript/cmd/gscript
 ```
 
 ## Quick Start
 
 Check out the tutorial docs here:
 
-https://github.com/gen0cide/gscript/tree/master/docs/tutorials
+https://github.com/Pascal-0x90/gscript/tree/master/docs/tutorials
 
 If you want to see example scripts, we have a separate repo you can clone:
 
@@ -77,8 +77,8 @@ https://github.com/ahhh/gscripts
 
 Here's a list of docs and tutorials that might be helpful for you:
 
- - [Godoc for Engine and Compiler](https://godoc.org/github.com/gen0cide/gscript)
- - [Tutorials in docs/tutorials](https://github.com/gen0cide/gscript/tree/master/docs/tutorials)
+ - [Godoc for Engine and Compiler](https://godoc.org/github.com/Pascal-0x90/gscript)
+ - [Tutorials in docs/tutorials](https://github.com/Pascal-0x90/gscript/tree/master/docs/tutorials)
  
 (more to come soon)
 

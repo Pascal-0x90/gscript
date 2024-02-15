@@ -11,8 +11,8 @@ import (
 	"regexp"
 	"sync"
 
-	"github.com/gen0cide/gscript/compiler/computil"
-	"github.com/gen0cide/gscript/compiler/translator"
+	"github.com/Pascal-0x90/gscript/compiler/computil"
+	"github.com/Pascal-0x90/gscript/compiler/translator"
 )
 
 var (
@@ -46,17 +46,17 @@ var (
 	}
 
 	binaryImports = map[string]string{
-		"bytes":           "bytes",
-		"compress/gzip":   "gzip",
-		"crypto/aes":      "aes",
-		"crypto/cipher":   "cipher",
-		"encoding/base64": "base64",
-		"fmt":             "fmt",
-		"io":              "io",
-		"github.com/gen0cide/gscript/engine":          "engine",
-		"github.com/robertkrimen/otto":                "otto",
-		"github.com/gen0cide/gscript/debugger":        "debugger",
-		"github.com/gen0cide/gscript/logger/standard": "standard",
+		"bytes":                                 "bytes",
+		"compress/gzip":                         "gzip",
+		"crypto/aes":                            "aes",
+		"crypto/cipher":                         "cipher",
+		"encoding/base64":                       "base64",
+		"fmt":                                   "fmt",
+		"io":                                    "io",
+		"github.com/Pascal-0x90/gscript/engine": "engine",
+		"github.com/robertkrimen/otto":          "otto",
+		"github.com/Pascal-0x90/gscript/debugger":        "debugger",
+		"github.com/Pascal-0x90/gscript/logger/standard": "standard",
 	}
 
 	funcRegexp  = regexp.MustCompile(`^func\({1}(?P<args>.*?)?\){1}\s*\(?(?P<rets>.*?)\)??$`)

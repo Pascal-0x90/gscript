@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/gen0cide/gscript/logger"
-	"github.com/gen0cide/gscript/logger/null"
+	"github.com/Pascal-0x90/gscript/logger"
+	"github.com/Pascal-0x90/gscript/logger/null"
 	"github.com/robertkrimen/otto"
 	"github.com/robertkrimen/otto/file"
 	"github.com/robertkrimen/otto/parser"

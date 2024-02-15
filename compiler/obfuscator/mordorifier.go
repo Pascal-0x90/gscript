@@ -13,8 +13,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/gen0cide/gscript/compiler/computil"
-	"github.com/gen0cide/gscript/logger"
+	"github.com/Pascal-0x90/gscript/compiler/computil"
+	"github.com/Pascal-0x90/gscript/logger"
 )
 
 const (
@@ -39,8 +39,10 @@ var (
 	}
 
 	importantMatches = []string{
-		`github\.com/gen0cide/gscript/[[:word:]\.\/\(\)\*\[\]\&\%\{\}\$ ]*`,
+		`github\.com/Pascal-0x90/gscript/[[:word:]\.\/\(\)\*\[\]\&\%\{\}\$ ]*`,
 		`github\.com/robertkrimen/otto/[[:word:]\.\/\(\)\*\[\]\&\%\{\}\$ ]*`,
+		`github\.com/Pascal-0x90/gscript`,
+		`github\.com/Pascal-0x90`,
 		`github\.com/gen0cide/gscript`,
 		`github\.com/robertkrimen/otto`,
 		`github\.com/gen0cide/`,

@@ -1,4 +1,4 @@
-module github.com/gen0cide/gscript
+module github.com/Pascal-0x90/gscript
 
 require (
 	github.com/Jeffail/gabs/v2 v2.5.0

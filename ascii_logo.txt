@@ -22,5 +22,5 @@
        .dWi   `88E   S C R I P T I N G       gen0cide
        4888~  J8%     E N G I N E            ahhh
         ^"===*"`                             vyrus
-                github.com/gen0cide/gscript
+                github.com/Pascal-0x90/gscript
 ***********************************************************

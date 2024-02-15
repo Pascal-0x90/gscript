@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/Pascal-0x90/gscript/compiler"
 	"github.com/fatih/color"
-	"github.com/gen0cide/gscript/compiler"
 	"github.com/urfave/cli/v2"
 )
 
