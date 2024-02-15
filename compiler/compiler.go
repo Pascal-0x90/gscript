@@ -498,17 +498,26 @@ func (c *Compiler) PerformPostCompileObfuscation() error {
 func (c *Compiler) BuildNativeBinary() error {
 	os.Chdir(c.BuildDir)
 	var cmd *exec.Cmd
+	c.Logger.Infof("Running compilation command")
 	if c.WindowsGui {
-		cmd = exec.Command("go", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
+		cmd = exec.Command("garble", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
 	} else {
-		cmd = exec.Command("go", "build", `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
+		//cmd = exec.Command("go", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
+		cmd = exec.Command("garble", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
 	}
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, fmt.Sprintf("GOOS=%s", c.OS))
 	cmd.Env = append(cmd.Env, fmt.Sprintf("GOARCH=%s", c.Arch))
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
+
+	cmd2 := exec.Command("go", "mod", "init", computil.RandAlphaNumericString(5))
+	cmd2.Run()
+	cmd2 = exec.Command("go", "mod", "tidy")
+	cmd2.Run()
+
 	err := cmd.Run()
+	c.Logger.Infof("Finished running command")
 	return err
 }
 

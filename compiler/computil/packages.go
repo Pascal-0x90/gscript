@@ -8,8 +8,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"runtime"
-
-	"github.com/ahhh/gopkgs"
+	// "github.com/uudashr/gopkgs"
 )
 
 var (
@@ -44,14 +43,14 @@ func regexpForModule(mod ...string) *regexp.Regexp {
 }
 
 // GatherInstalledGoPackages retrieves a list of all installed go packages in the context of current GOPATH and GOROOT
-func GatherInstalledGoPackages() map[string]gopkgs.Pkg {
-	goPackages, err := gopkgs.Packages(gopkgs.Options{NoVendor: true})
+func GatherInstalledGoPackages() map[string]Pkg {
+	goPackages, err := List(PkgOptions{NoVendor: true})
 	if err != nil {
 		panic(err)
 	}
 	if runtime.GOOS == "windows" {
 		pathFix := regexp.MustCompile(`\\`)
-		newMap := map[string]gopkgs.Pkg{}
+		newMap := map[string]Pkg{}
 		for n, p := range goPackages {
 			newMap[pathFix.ReplaceAllString(n, `/`)] = p
 		}
@@ -113,7 +112,7 @@ func ResolveEngineDir() (targetDir string, err error) {
 }
 
 // ResolveStandardLibraryDir attempts to resolve the absolute path of the specified standard library package
-func ResolveStandardLibraryDir(pkg string) (*gopkgs.Pkg, error) {
+func ResolveStandardLibraryDir(pkg string) (*Pkg, error) {
 	dirMatch := regexpForModule("stdlib", pkg)
 	for name, gpkg := range InstalledGoPackages {
 		if !dirMatch.MatchString(name) {
@@ -124,7 +123,7 @@ func ResolveStandardLibraryDir(pkg string) (*gopkgs.Pkg, error) {
 	return nil, fmt.Errorf("could not locate standard library package %s", pkg)
 }
 
-func ResolveGlobalImport(pkg string) (*gopkgs.Pkg, error) {
+func ResolveGlobalImport(pkg string) (*Pkg, error) {
 	for _, gpkg := range InstalledGoPackages {
 		if gpkg.ImportPath == pkg {
 			return &gpkg, nil

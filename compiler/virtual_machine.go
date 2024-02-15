@@ -389,6 +389,7 @@ func (g *GenesisVM) WalkGenesisAST() error {
 func (g *GenesisVM) UnresolvedGoPackages() []string {
 	unresolved := []string{}
 	for name, gpkg := range g.GoPackageByImport {
+		// fmt.Printf("Name: %v Dir: %v\n", name, gpkg.Dir)
 		if gpkg.Dir != "" {
 			continue
 		}
@@ -416,9 +417,9 @@ func (g *GenesisVM) WalkGoPackageAST(gop *GoPackage, wg *sync.WaitGroup, errChan
 		validSrcFiles[f] = true
 	}
 
-    for _, f := range pkg.CgoFiles {
-       validSrcFiles[f] = true
-    }
+	for _, f := range pkg.CgoFiles {
+		validSrcFiles[f] = true
+	}
 
 	pkgFilter := func(fi os.FileInfo) bool {
 		return validSrcFiles[fi.Name()]
