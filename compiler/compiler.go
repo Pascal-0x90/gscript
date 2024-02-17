@@ -502,13 +502,13 @@ func (c *Compiler) BuildNativeBinary() error {
 	// TODO: Add some sort of optioning here to make it so people don't need to use garble. Maybe in build args???
 	if c.WindowsGui {
 		if c.EnableGarble {
-			cmd = exec.Command("garble", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
+			cmd = exec.Command("garble", c.BuildArgs, "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile)
 		} else {
 			cmd = exec.Command("go", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
 		}
 	} else {
 		if c.EnableGarble {
-			cmd = exec.Command("garble", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
+			cmd = exec.Command("garble", c.BuildArgs, "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile)
 		} else {
 			cmd = exec.Command("go", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
 		}
