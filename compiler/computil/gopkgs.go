@@ -256,7 +256,6 @@ func listModFiles(modDir string) (<-chan goFile, <-chan error) {
 }
 
 func collectPkgs(srcDir, workDir string, noVendor bool, out map[string]Pkg) error {
-	Logger.Debug("Collecting from: %v for wkdir: %v\n", srcDir, workDir)
 	filec, errc := listFiles(srcDir, workDir, noVendor)
 
 	for f := range filec {
