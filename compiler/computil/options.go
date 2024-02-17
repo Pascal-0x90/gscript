@@ -106,6 +106,10 @@ type Options struct {
 	// Used to describe the genesis dir on this machine
 	// DEFAULT: Discovered through GOPATH
 	GenesisDir string `json:"genesis_dir"`
+
+	// Tell the compiler to use garble instead of just go
+	// DEFAULT: go
+	EnableGarble bool `json:"enable_garble"`
 }
 
 // ValidOSList returns the list of valid target operating systems
@@ -187,6 +191,7 @@ func DefaultOptions() Options {
 		ForceUseMordorifier:   false,
 		ObfuscationLevel:      FullObfuscation,
 		GenesisDir:            rootDir,
+		EnableGarble:          false,
 	}
 }
 

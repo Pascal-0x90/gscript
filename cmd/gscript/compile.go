@@ -98,6 +98,11 @@ var (
 				Usage:       "override the default obfuscation level, where argument can be 0-4 with 0 being full and 4 being none",
 				Destination: &defaultCompileOptions.ObfuscationLevel,
 			},
+			&cli.BoolFlag{
+				Name:        "enable-garble",
+				Usage:       "enable using the garble compiler instead of the standard golang compiler.",
+				Destination: &defaultCompileOptions.EnableGarble,
+			},
 		},
 		Action: compileScriptCommand,
 	}
@@ -165,6 +170,7 @@ func compileScriptCommand(c *cli.Context) error {
 	cliLogger.Infof(copt("Import All Native Funcs", defaultCompileOptions.ImportAllNativeFuncs))
 	cliLogger.Infof(copt("Skip Compilation", defaultCompileOptions.SkipCompilation))
 	cliLogger.Infof(copt("Obfuscation Level", defaultCompileOptions.ObfuscationLevel))
+	cliLogger.Infof(copt("Use Garble Compiler", defaultCompileOptions.EnableGarble))
 	cliLogger.Info("")
 	cliLogger.Info(color.HiRedString("***  SOURCE SCRIPTS  ***"))
 	cliLogger.Info("")

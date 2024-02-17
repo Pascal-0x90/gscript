@@ -50,6 +50,7 @@ func interactiveShellCommand(c *cli.Context) error {
 	shellOpts.UseHumanReadableNames = true
 	shellOpts.DebuggerEnabled = true
 	shellOpts.LoggingEnabled = true
+	shellOpts.EnableGarble = true
 	gc := compiler.New(&shellOpts)
 	scriptPath := filepath.Join(gc.BuildDir, "debugger")
 	gc.SetLogger(cliLogger)

@@ -501,10 +501,18 @@ func (c *Compiler) BuildNativeBinary() error {
 	c.Logger.Infof("Running compilation command")
 	// TODO: Add some sort of optioning here to make it so people don't need to use garble. Maybe in build args???
 	if c.WindowsGui {
-		cmd = exec.Command("garble", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
+		if c.EnableGarble {
+			cmd = exec.Command("garble", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
+		} else {
+			cmd = exec.Command("go", "build", `-ldflags`, `-H=windowsgui -s -w`, "-o", c.OutputFile, c.BuildArgs)
+		}
 	} else {
-		//cmd = exec.Command("go", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
-		cmd = exec.Command("garble", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
+		if c.EnableGarble {
+			cmd = exec.Command("garble", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
+		} else {
+			cmd = exec.Command("go", "build", `-buildvcs=false`, `-ldflags`, `-s -w`, "-o", c.OutputFile, c.BuildArgs)
+		}
+
 	}
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, fmt.Sprintf("GOOS=%s", c.OS))
