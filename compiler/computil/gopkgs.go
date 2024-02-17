@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"bytes"
 	"errors"
-	"fmt"
 	"go/build"
 	"io"
 	"os"
@@ -12,6 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/Pascal-0x90/gscript/logger"
 	"github.com/karrick/godirwalk"
 
 	pkgerrors "github.com/pkg/errors"
@@ -22,6 +22,8 @@ const (
 	testDataDir    = "testdata"
 	nodeModulesDir = "node_modules"
 )
+
+var Logger logger.Logger
 
 // Pkg hold the information of the package.
 type Pkg struct {
@@ -254,13 +256,10 @@ func listModFiles(modDir string) (<-chan goFile, <-chan error) {
 }
 
 func collectPkgs(srcDir, workDir string, noVendor bool, out map[string]Pkg) error {
-	fmt.Printf("Collecting from: %v for wkdir: %v\n", srcDir, workDir)
+	Logger.Debug("Collecting from: %v for wkdir: %v\n", srcDir, workDir)
 	filec, errc := listFiles(srcDir, workDir, noVendor)
 
 	for f := range filec {
-		if srcDir == "/go/src" {
-			fmt.Println(f)
-		}
 		pkgDir := f.dir
 		if _, found := out[pkgDir]; found {
 			// already have this package, skip
