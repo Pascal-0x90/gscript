@@ -358,7 +358,7 @@ func RunAs(user, password, proc, cmdline string, netonly bool) (int, error) {
 		return -1, err
 	}
 
-	return procInfo.ProcessId, nil
+	return int(procInfo.ProcessId), nil
 }
 
 // func PatchAmsi(pid_int int) error {
